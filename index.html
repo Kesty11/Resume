@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanishka Khandelwal — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --accent: #c0392b;
+    --rule: #d0c9c0;
+    --bg: #faf8f5;
+    --paper: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .resume {
+    background: var(--paper);
+    width: 100%;
+    max-width: 860px;
+    padding: 48px 52px;
+    box-shadow: 0 2px 40px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
+    animation: fadeUp 0.6s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---- HEADER ---- */
+  .header {
+    border-bottom: 2.5px solid var(--ink);
+    padding-bottom: 16px;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 300;
+    color: var(--muted);
+  }
+
+  .contact a {
+    color: var(--ink);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact a:hover { color: var(--accent); }
+
+  /* ---- SECTIONS ---- */
+  section { margin-bottom: 22px; animation: fadeUp 0.6s ease both; }
+  section:nth-child(2) { animation-delay: 0.1s; }
+  section:nth-child(3) { animation-delay: 0.2s; }
+  section:nth-child(4) { animation-delay: 0.3s; }
+  section:nth-child(5) { animation-delay: 0.4s; }
+
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ---- EDUCATION ---- */
+  .edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    padding: 4px 0;
+    flex-wrap: wrap;
+  }
+
+  .edu-label {
+    font-size: 0.875rem;
+    color: var(--ink);
+  }
+
+  .edu-label strong {
+    font-weight: 600;
+  }
+
+  .edu-score {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  /* ---- EXPERIENCE & PROJECTS ---- */
+  .entry { margin-bottom: 16px; }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  .entry-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .entry-title span {
+    font-weight: 300;
+    color: var(--muted);
+  }
+
+  .entry-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .entry ul {
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .entry li {
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: #333;
+    list-style: none;
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .entry li::before {
+    content: '—';
+    position: absolute;
+    left: -6px;
+    color: var(--rule);
+    font-size: 0.75rem;
+  }
+
+  .entry li a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .entry li a:hover { border-color: var(--accent); }
+
+  /* ---- SKILLS ---- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 5px 24px;
+    font-size: 0.82rem;
+  }
+
+  .skill-cat {
+    font-weight: 600;
+    color: var(--ink);
+    white-space: nowrap;
+    padding: 1px 0;
+  }
+
+  .skill-vals {
+    color: #444;
+    padding: 1px 0;
+    line-height: 1.5;
+  }
+
+  /* ---- PRINT ---- */
+  @media print {
+    body { background: white; padding: 0; }
+    .resume { box-shadow: none; padding: 30px 36px; max-width: 100%; }
+  }
+
+  @media (max-width: 600px) {
+    .resume { padding: 28px 22px; }
+    .name { font-size: 1.9rem; }
+    .header { flex-direction: column; align-items: flex-start; }
+    .contact { align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="resume">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="name">Kanishka Khandelwal</div>
+    <div class="contact">
+      <a href="mailto:kanishkakhandelwal.work@gmail.com">kanishkakhandelwal.work@gmail.com</a>
+      <a href="https://www.linkedin.com/in/kanishkakhandelwal/" target="_blank">linkedin.com/in/kanishkakhandelwal/</a>
+      <a href="https://leetcode.com/u/kesty/" target="_blank">leetcode.com/u/kesty/ (170+ Ques)</a>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-title">Education</div>
+    <div class="edu-item">
+      <div class="edu-label"><strong>B.Tech. in Computer Engineering</strong>, SVKM's MPSTME NMIMS University</div>
+      <div class="edu-score">CGPA: 8.5 / 10</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-label"><strong>CBSE 12th Board (2021)</strong>, Carmel Convent Senior Secondary School</div>
+      <div class="edu-score">85%</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-label"><strong>CBSE 10th Board (2019)</strong>, Carmel Convent Senior Secondary School</div>
+      <div class="edu-score">90.4%</div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <div class="section-title">Experience</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">DeltaX <span>— Associate Engineer</span></div>
+        <div class="entry-date">Jan '25 – Present</div>
+      </div>
+      <ul>
+        <li>Engineered 3 high-reliability backend microservices handling contracts, invoices, reserve orders, and auditing workflows, improving data consistency and operational accuracy across financial systems.</li>
+        <li>Optimized change-comparison logic to intelligently detect meaningful business updates, ensuring amendment workflows trigger only when required.</li>
+        <li>Built and enhanced the end-to-end Estimate creation and auditing flow, resolving critical workflow gaps and improving clients' financial tracking reliability.</li>
+        <li>Designed and implemented a flexible Free Form accounting workflow, enabling users to create structured financial entries through dynamic Chart of Accounts selection.</li>
+        <li>Mentoring new joiners during their training period, guiding them on architecture, code standards, and production deployment practices.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">RaptorX (Formerly Panoplia.io) <span>— Application Developer</span></div>
+        <div class="entry-date">Oct '23 – Dec '23</div>
+      </div>
+      <ul>
+        <li>Developed and optimized six major gameplay and system functionalities, enhancing frame performance, reducing load times, and delivering smoother in-game interactions for users.</li>
+        <li>Drove creativity during eight product ideation and design sessions, proposing gameplay mechanics and technical solutions that influenced feature direction and user experience strategy.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <div class="section-title">Projects</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">KSOS Mobile App <span style="font-weight:400;color:#888;font-size:0.78rem;">(95K+ Downloads)</span></div>
+        <div class="entry-date">July '24</div>
+      </div>
+      <ul>
+        <li>Designed and developed a mobile application for students of Kota with real-time location tracking, ensuring low-latency performance for emergency response systems deployed by Rajasthan Police.</li>
+        <li>Technologies used: Flutter, Firebase, OpenStreetMaps API; featured in 10+ national media outlets including
+          <a href="https://drive.google.com/file/d/1q9hNZI_Gbu3P4rC0NeyZXH33F0C4lpHw/view?usp=sharing" target="_blank">Aaj Tak</a>,
+          <a href="https://www.etvbharat.com/hi/!state/ksos-app-launched-for-coaching-students-police-will-reach-near-through-panic-button-rajasthan-news-rjs24110807141" target="_blank">ETV Bharat</a>,
+          <a href="https://www.bhaskar.com/local/rajasthan/kota/news/information-given-about-social-policing-and-student-app-133946639.html" target="_blank">Dainik Bhaskar</a> — and trended #3 in Parenting on
+          <a href="https://play.google.com/store/apps/details?id=com.twofoldtwins.panicbutton&pcampaignid=web_share" target="_blank">Play Store (95K+ Downloads)</a>.
+        </li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">CineDB Backend</div>
+        <div class="entry-date">April '25</div>
+      </div>
+      <ul>
+        <li>Developed a complete backend for an IMDb-like application using .NET, C#, SQL Server, and RESTful APIs, supporting full CRUD operations for movies, actors, producers, genres, and reviews.</li>
+        <li>Implemented and tested all API endpoints using Postman; leveraged stored procedures for optimized movie insertion and updates, ensuring efficient database interactions. <a href="https://github.com/Kesty11/IMDb_Backend/tree/main/IMDB_Backend/API4" target="_blank">Link Here</a></li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Statistical Optimization Library</div>
+        <div class="entry-date">Aug '23</div>
+      </div>
+      <ul>
+        <li>Designed and developed a Python toolkit for statistical analysis and optimization, utilizing NumPy, Pandas, SciPy, Scikit-learn, Matplotlib, Seaborn, and Pulp 2.3.</li>
+        <li>Published the toolkit <a href="https://pypi.org/project/ORTipy2/" target="_blank">ORTipy2</a> on PyPI, surpassing 1,000+ downloads.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Benny's Adventure Arcade Game</div>
+        <div class="entry-date">Nov '23</div>
+      </div>
+      <ul>
+        <li>Developed an exclusive gaming project featuring custom gameplay mechanics, in-game physics, and level design.</li>
+        <li>Debugged and optimized game performance, resolving critical gameplay logic issues for a smoother experience using Unity, C#, and Unreal Engine.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-title">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-cat">Languages</div>
+      <div class="skill-vals">C#, C++ (LeetCode 180+), Python, C, JavaScript</div>
+
+      <div class="skill-cat">Backend & Frameworks</div>
+      <div class="skill-vals">.NET, MySQL, NoSQL, Firebase, Jenkins</div>
+
+      <div class="skill-cat">Android Development</div>
+      <div class="skill-vals">Flutter, Dart</div>
+
+      <div class="skill-cat">Web Development</div>
+      <div class="skill-vals">HTML, CSS, JS, ReactJS, VueJS, TypeScript, Tailwind CSS, Bootstrap</div>
+
+      <div class="skill-cat">Softwares</div>
+      <div class="skill-vals">Unity, Unreal Engine, Android Studio</div>
+
+      <div class="skill-cat">Data Analytics</div>
+      <div class="skill-vals">MATLAB, SAS, Tableau, NumPy, Pandas</div>
+
+      <div class="skill-cat">Development Tools</div>
+      <div class="skill-vals">WIX, WordPress, Git, GitHub, Oracle Apex, Bitbucket</div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
