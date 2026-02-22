@@ -41,7 +41,6 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* ---- HEADER ---- */
   .header {
     border-bottom: 2.5px solid var(--ink);
     padding-bottom: 16px;
@@ -59,7 +58,6 @@
     font-weight: 700;
     letter-spacing: -0.5px;
     line-height: 1;
-    color: var(--ink);
   }
 
   .contact {
@@ -73,15 +71,9 @@
     color: var(--muted);
   }
 
-  .contact a {
-    color: var(--ink);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
+  .contact a { color: var(--ink); text-decoration: none; transition: color 0.2s; }
   .contact a:hover { color: var(--accent); }
 
-  /* ---- SECTIONS ---- */
   section { margin-bottom: 22px; animation: fadeUp 0.6s ease both; }
   section:nth-child(2) { animation-delay: 0.1s; }
   section:nth-child(3) { animation-delay: 0.2s; }
@@ -100,7 +92,6 @@
     border-bottom: 1px solid var(--rule);
   }
 
-  /* ---- EDUCATION ---- */
   .edu-item {
     display: flex;
     justify-content: space-between;
@@ -110,24 +101,16 @@
     flex-wrap: wrap;
   }
 
-  .edu-label {
-    font-size: 0.875rem;
-    color: var(--ink);
-  }
-
-  .edu-label strong {
-    font-weight: 600;
-  }
+  .edu-label { font-size: 0.875rem; }
+  .edu-label strong { font-weight: 600; }
 
   .edu-score {
     font-family: 'DM Mono', monospace;
     font-size: 0.78rem;
     font-weight: 500;
-    color: var(--ink);
     white-space: nowrap;
   }
 
-  /* ---- EXPERIENCE & PROJECTS ---- */
   .entry { margin-bottom: 16px; }
 
   .entry-header {
@@ -139,16 +122,8 @@
     margin-bottom: 6px;
   }
 
-  .entry-title {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--ink);
-  }
-
-  .entry-title span {
-    font-weight: 300;
-    color: var(--muted);
-  }
+  .entry-title { font-size: 0.9rem; font-weight: 600; }
+  .entry-title span { font-weight: 300; color: var(--muted); }
 
   .entry-date {
     font-family: 'DM Mono', monospace;
@@ -157,12 +132,7 @@
     white-space: nowrap;
   }
 
-  .entry ul {
-    padding-left: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
+  .entry ul { padding-left: 16px; display: flex; flex-direction: column; gap: 4px; }
 
   .entry li {
     font-size: 0.82rem;
@@ -181,16 +151,9 @@
     font-size: 0.75rem;
   }
 
-  .entry li a {
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
-  }
-
+  .entry li a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
   .entry li a:hover { border-color: var(--accent); }
 
-  /* ---- SKILLS ---- */
   .skills-grid {
     display: grid;
     grid-template-columns: max-content 1fr;
@@ -198,37 +161,73 @@
     font-size: 0.82rem;
   }
 
-  .skill-cat {
-    font-weight: 600;
-    color: var(--ink);
+  .skill-cat { font-weight: 600; white-space: nowrap; padding: 1px 0; }
+  .skill-vals { color: #444; padding: 1px 0; line-height: 1.5; }
+
+  /* DOWNLOAD BUTTON */
+  .download-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 52px;
+    height: 52px;
+    background: var(--ink);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.28);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    z-index: 100;
+  }
+
+  .download-btn:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(192,57,43,0.4);
+  }
+
+  .download-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+  .download-btn .tooltip {
+    position: absolute;
+    right: 62px;
+    background: var(--ink);
+    color: white;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    padding: 5px 10px;
+    border-radius: 4px;
     white-space: nowrap;
-    padding: 1px 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
   }
 
-  .skill-vals {
-    color: #444;
-    padding: 1px 0;
-    line-height: 1.5;
-  }
-
-  /* ---- PRINT ---- */
-  @media print {
-    body { background: white; padding: 0; }
-    .resume { box-shadow: none; padding: 30px 36px; max-width: 100%; }
-  }
+  .download-btn:hover .tooltip { opacity: 1; }
 
   @media (max-width: 600px) {
     .resume { padding: 28px 22px; }
     .name { font-size: 1.9rem; }
     .header { flex-direction: column; align-items: flex-start; }
     .contact { align-items: flex-start; }
+    .download-btn { bottom: 20px; right: 20px; }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .resume { box-shadow: none; padding: 30px 36px; max-width: 100%; }
+    .download-btn { display: none; }
   }
 </style>
 </head>
 <body>
 <div class="resume">
 
-  <!-- HEADER -->
   <div class="header">
     <div class="name">Kanishka Khandelwal</div>
     <div class="contact">
@@ -238,7 +237,6 @@
     </div>
   </div>
 
-  <!-- EDUCATION -->
   <section>
     <div class="section-title">Education</div>
     <div class="edu-item">
@@ -255,7 +253,6 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section>
     <div class="section-title">Experience</div>
 
@@ -285,7 +282,6 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section>
     <div class="section-title">Projects</div>
 
@@ -339,14 +335,13 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section>
     <div class="section-title">Skills</div>
     <div class="skills-grid">
       <div class="skill-cat">Languages</div>
       <div class="skill-vals">C#, C++ (LeetCode 180+), Python, C, JavaScript</div>
 
-      <div class="skill-cat">Backend & Frameworks</div>
+      <div class="skill-cat">Backend &amp; Frameworks</div>
       <div class="skill-vals">.NET, MySQL, NoSQL, Firebase, Jenkins</div>
 
       <div class="skill-cat">Android Development</div>
@@ -367,5 +362,16 @@
   </section>
 
 </div>
+
+<!-- FLOATING DOWNLOAD BUTTON -->
+<button class="download-btn" onclick="window.print()" aria-label="Download Resume as PDF">
+  <span class="tooltip">Download PDF</span>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3v13"/>
+    <path d="M7 11l5 5 5-5"/>
+    <line x1="5" y1="20" x2="19" y2="20"/>
+  </svg>
+</button>
+
 </body>
 </html>
