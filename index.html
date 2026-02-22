@@ -190,7 +190,7 @@
     box-shadow: 0 10px 30px rgba(192,57,43,0.4);
   }
 
-  .download-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .download-btn svg { width: 22px; height: 22px; flex-shrink: 0; stroke: white; }
 
   .download-btn .tooltip {
     position: absolute;
@@ -221,7 +221,7 @@
   @media print {
     body { background: white; padding: 0; }
     .resume { box-shadow: none; padding: 30px 36px; max-width: 100%; }
-    .download-btn { display: none; }
+    .download-btn { display: none !important; }
   }
 </style>
 </head>
@@ -231,7 +231,7 @@
   <div class="header">
     <div class="name">Kanishka Khandelwal</div>
     <div class="contact">
-      <a href="mailto:kanishkakhandelwal.work@gmail.com">kanishkakhandelwal.work@gmail.com</a>
+      <a href="/cdn-cgi/l/email-protection#90fbf1fef9e3f8fbf1fbf8f1fef4f5fce7f1fcbee7ffe2fbd0f7fdf1f9fcbef3fffd"><span class="__cf_email__" data-cfemail="0f646e61667c67646e64676e616b6a63786e632178607d644f68626e6663216c6062">[email&#160;protected]</span></a>
       <a href="https://www.linkedin.com/in/kanishkakhandelwal/" target="_blank">linkedin.com/in/kanishkakhandelwal/</a>
       <a href="https://leetcode.com/u/kesty/" target="_blank">leetcode.com/u/kesty/ (170+ Ques)</a>
     </div>
@@ -364,14 +364,14 @@
 </div>
 
 <!-- FLOATING DOWNLOAD BUTTON -->
-<button class="download-btn" onclick="window.print()" aria-label="Download Resume as PDF">
+<a class="download-btn" href="Kanishka_Khandelwal.pdf" download="Kanishka_Khandelwal.pdf" aria-label="Download Resume as PDF">
   <span class="tooltip">Download PDF</span>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 3v13"/>
-    <path d="M7 11l5 5 5-5"/>
-    <line x1="5" y1="20" x2="19" y2="20"/>
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3v13"></path>
+    <polyline points="7 11 12 16 17 11"></polyline>
+    <line x1="5" y1="21" x2="19" y2="21"></line>
   </svg>
-</button>
+</a>
 
 </body>
 </html>
